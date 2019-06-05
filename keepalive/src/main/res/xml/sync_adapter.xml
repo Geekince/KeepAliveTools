@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<sync-adapter xmlns:android="http://schemas.android.com/apk/res/android"
-    android:accountType="com.process.keepalive.daemon.account.authenticator"
-    android:allowParallelSyncs="false"
-    android:contentAuthority="com.process.keepalive.daemon.account.sync_provider"
-    android:isAlwaysSyncable="true"
-    android:supportsUploading="false"
-    android:userVisible="true" />
