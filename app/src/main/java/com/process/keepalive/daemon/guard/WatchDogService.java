@@ -14,6 +14,7 @@ import android.os.IBinder;
 
 import com.process.keepalive.daemon.guard.account.AccountHelper;
 import com.process.keepalive.daemon.guard.job.JobSchedulerService;
+import com.process.keepalive.daemon.guard.pixel.ScreenManager;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,6 +31,8 @@ public class WatchDogService extends Service {
 
     protected static Disposable sDisposable;
     protected static PendingIntent sPendingIntent;
+
+    private ScreenManager mScreenManager;
 
     /**
      * 守护服务，运行在:watch子进程中

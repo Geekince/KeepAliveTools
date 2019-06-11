@@ -34,9 +34,11 @@
             android:name=".pixel.SinglePixelActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
             android:excludeFromRecents="true"
+            android:exported="false"
             android:finishOnTaskLaunch="false"
             android:launchMode="singleInstance"
             android:process=":watch"
+            android:taskAffinity="com.process.keepalive.daemon.guard"
             android:theme="@style/SingleActivityStyle" />
 
         <service android:name="com.process.keepalive.daemon.DemoService" />

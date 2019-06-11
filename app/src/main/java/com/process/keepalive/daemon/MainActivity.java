@@ -7,6 +7,7 @@ import android.view.View;
 import com.process.keepalive.daemon.guard.DaemonEnv;
 import com.process.keepalive.daemon.guard.IntentWrapper;
 import com.process.keepalive.daemon.guard.R;
+import com.process.keepalive.daemon.guard.pixel.ScreenManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ScreenManager.getInstance().register(this);
     }
 
     public void onClick(View v) {
@@ -34,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         IntentWrapper.onBackPressed(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ScreenManager.getInstance().unRegister(this);
     }
 
 }

@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.process.keepalive.daemon.guard.DaemonEnv;
+import com.process.keepalive.daemon.guard.LogUtils;
 import com.process.keepalive.daemon.guard.WatchDogService;
 
 public class SinglePixelActivity extends Activity {
@@ -42,6 +43,7 @@ public class SinglePixelActivity extends Activity {
     @Override
     protected void onDestroy() {
         DaemonEnv.startServiceMayBind(WatchDogService.class);
+        LogUtils.i("Keep","SinglePixelActivity onDestroy");
         super.onDestroy();
     }
 
